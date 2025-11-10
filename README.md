@@ -51,7 +51,7 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 ## 5. 🔍 Análisis planeado
 - **Exploratorio:** distribución de aciertos por tipo de tiro y etapa.  
 - **Comparativo:** diferencia de medias y dispersión entre regular y playoffs.  
-- **Predictivo (futuro):** regresión logística o árbol de decisión para ver qué variables predicen la victoria o la ventaja en el 4º cuarto.  
+- **Predictivo (futuro):** regresión logística en toma de decisiones y su efectividad para ver qué variables predicen la victoria o la ventaja en el 4º cuarto.  
 
 ---
 
