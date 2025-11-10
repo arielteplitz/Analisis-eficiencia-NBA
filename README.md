@@ -62,7 +62,7 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 ---
 
-## 7. 🚀 Próximos pasos
+## 7. 💡 Próximos pasos
 1. Ampliar con datos reales por posesión (NBA API).  
 2. Incorporar contexto de juego (ventaja/desventaja, rival, fatiga).  
 3. Visualizar eficiencia en los últimos 3 minutos de partidos cerrados.  
