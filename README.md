@@ -70,7 +70,7 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 ---
 
-## 📂 Archivos del repositorio
+## 📂 Fuentes
 - `base_nba.xlsx` → Dataset principal.  
 - `base_nba.csv` → Versión en formato CSV.  
 - `notebook_nba.ipynb` → Análisis y visualizaciones en Python.  
