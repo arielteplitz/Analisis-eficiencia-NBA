@@ -78,4 +78,4 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 ---
 
-![NBA Logo](https://upload.wikimedia.org/wikipedia/en/0/03/National_Basketball_Association_logo.svg)
+
