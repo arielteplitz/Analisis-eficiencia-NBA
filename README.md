@@ -31,7 +31,10 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
   - Bandejas_tomadas / metidas (por cuarto)  
   - Minutos_por_partido  
   - Promedio_puntos  
-  - %Eficiencia_Total  
+  - %Eficiencia_Total
+  - Clutch → 1 si corresponde a los últimos 2 minutos del 4.º cuarto con diferencia ≤5 puntos; 0 en caso contrario.
+  - diferencia_final
+  - resultado_partido
 
 > Se mantienen los mismos jugadores a lo largo de los cuartos para reflejar consistencia de rendimiento.
 
