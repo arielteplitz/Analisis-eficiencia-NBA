@@ -22,7 +22,7 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 ## 3. 🧩 Estructura del dataset
 - **850 filas** (jugadores y partidos combinados)  
 - **Columnas principales:**
-  - Jugador  
+  - Jugador (maximo anotador de su equipo)
   - Equipo  
   - Temporada  
   - Etapa (Regular / Playoffs)  
