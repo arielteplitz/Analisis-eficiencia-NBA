@@ -67,7 +67,7 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 ## 7. 💡 Próximos pasos
 1. Ampliar con datos reales por posesión (NBA API).  
-2. Incorporar contexto de juego (ventaja/desventaja, cansancio).  
+2. Incorporar contexto de juego (ventaja/desventaja, momento del partido).  
 3. Visualizar eficiencia en los últimos 3 minutos de partidos cerrados.  
 4. Entrenar un modelo predictivo y validar su precisión.  
 
