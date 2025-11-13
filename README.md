@@ -67,13 +67,13 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 ## 7. 💡 Próximos pasos
 1. Ampliar con datos reales por posesión (NBA API).  
-2. Incorporar contexto de juego (ventaja/desventaja, rival, fatiga).  
+2. Incorporar contexto de juego (ventaja/desventaja, cansancio).  
 3. Visualizar eficiencia en los últimos 3 minutos de partidos cerrados.  
 4. Entrenar un modelo predictivo y validar su precisión.  
 
 ---
 
-## 📂 Fuentes
+## 📂 archivos
 - `base_nba.xlsx` → Dataset principal.  
 - `base_nba.csv` → Versión en formato CSV.  
 - `notebook_nba.ipynb` → Análisis y visualizaciones en Python.  
