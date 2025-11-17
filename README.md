@@ -5,6 +5,9 @@ Proyecto personal de análisis NBA. Trabajo con datos reales y simulados por cua
 Analizar y predecir si el **tiro de media distancia** mantiene o mejora su eficiencia respecto a los **triples y bandejas** durante los **últimos cuartos** de partidos de NBA, especialmente en **playoffs**.  
 El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
+H0: No hay diferencias significativas en la eficiencia de tiro entre el clutch y el resto del partido para ninguno de los tres tipos de tiro (T3, T2, bandeja), ni tampoco entre regular season y playoffs.
+
+H1: El tiro de media distancia (T2) es la opción más efectiva en situaciones clutch, y su ventaja es todavía mayor durante los playoffs en comparación con la regular season.
 ---
 
 ## 2. 📊 Fuentes de datos
