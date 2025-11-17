@@ -7,7 +7,8 @@ El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
 
 H0: No hay diferencias significativas en la eficiencia de tiro entre el clutch y el resto del partido para ninguno de los tres tipos de tiro (T3, T2, bandeja), ni tampoco entre regular season y playoffs.
 
-H1: El tiro de media distancia (T2) es la opción más efectiva en situaciones clutch, y su ventaja es todavía mayor durante los playoffs en comparación con la regular season.
+H1: El tiro de media distancia (T2) es la opcion mas efectiva en situaciones clutch, y su ventaja es mayor todavia durante los playoffs en comparacion con la temporada regular
+
 ---
 
 ## 2. 📊 Fuentes de datos
