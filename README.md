@@ -1,88 +1,97 @@
-# 📘 Proyecto NBA — Análisis y Simulación de Eficiencia de Tiro
-Proyecto personal de análisis NBA. Trabajo con datos reales y simulados por cuarto para estudiar eficiencia de tiro, comparaciones entre etapas y futuras simulaciones de rendimiento con Python.
+# NBA Shooting Efficiency Analysis
 
-## 1. 🎯 Objetivo
-Analizar y predecir si el **tiro de media distancia** mantiene o mejora su eficiencia respecto a los **triples y bandejas** durante los **últimos cuartos** de partidos de NBA, especialmente en **playoffs**.  
-El propósito es comprobar si esta hipótesis tiene sustento estadístico o no.
+## Objetivo del proyecto
+Analizar la eficiencia de tiro en la NBA en función del **contexto del partido**, evaluando si existen diferencias significativas según:
+- Tipo de tiro (2PT / 3PT)
+- Contexto clutch vs no clutch
+- Período del partido
+- Tipo de temporada (Regular Season vs Playoffs)
 
-H0: No hay diferencias significativas en la eficiencia de tiro entre el clutch y el resto del partido para ninguno de los tres tipos de tiro (T3, T2, bandeja), ni tampoco entre regular season y playoffs.
-
-H1: El tiro de media distancia (T2) es la opcion mas efectiva en situaciones clutch, y su ventaja es mayor todavia durante los playoffs en comparacion con la temporada regular debido al aumento de intensidad y ajustes defensivos
-
----
-
-## 2. 📊 Fuentes de datos
-- Estadísticas oficiales de la NBA → [nba.com/stats](https://www.nba.com/stats)  
-- Kaggle Datasets:  
-  - *NBA Player Stats (2022–2024)*  
-  - *NBA Play-by-Play Data (regular & playoffs)*  
-- Datos complementarios simulados de forma proporcional (por cuarto y tipo de tiro) basados en tendencias reales.  
-- API: *nba_api.stats.endpoints* (para ampliar datos futuros).  
-
-> 🔹 En esta versión inicial se usaron datos reales agregados + simulación detallada para segmentar por cuarto.
+El foco principal del análisis es entender **cómo cambia la eficiencia** cuando varía el contexto competitivo.
 
 ---
 
-## 3. 🧩 Estructura del dataset
-- **850 filas** (jugadores y partidos combinados)  
-- **Columnas principales:**
-  - Jugador (maximo anotador de su equipo)
-  - Equipo  
-  - Temporada  
-  - Etapa (Regular / Playoffs)  
-  - Tiros_triples_tomados / metidos (por cuarto)  
-  - Tiros_media_tomados / metidos (por cuarto)  
-  - Bandejas_tomadas / metidas (por cuarto)  
-  - Minutos_por_partido  
-  - Promedio_puntos  
-  - %Eficiencia_Total
-  - Clutch → 1 si corresponde a los últimos 2 minutos del 4.º cuarto con diferencia ≤5 puntos; 0 en caso contrario.
-  - diferencia_final
-  - resultado_partido
+## Dataset
+- Dataset estructurado de tiros en la NBA
+- 850 observaciones y 24 variables
+- No presenta valores nulos relevantes ni duplicados
+- Las variables del 4° cuarto contienen nulos esperados por definición del dataset
 
-> Se mantienen los mismos jugadores a lo largo de los cuartos para reflejar consistencia de rendimiento.
+El dataset se encuentra limpio y en condiciones para análisis estadístico y modelado.
 
 ---
 
-## 4. ⚙️ Preparación de datos
-1. **Limpieza inicial:** eliminación de filas vacías o duplicadas.  
-2. **Estandarización:** normalización de porcentajes y nombres de equipos/jugadores.  
-3. **Creación de columnas derivadas:**  
-   - % de acierto por tipo de tiro  
-   - eficiencia ponderada por minutos  
-   - segmentación por etapa (regular vs playoffs)  
-4. **Validación:** comparación de promedios con estadísticas oficiales para asegurar coherencia.  
+## Metodología
+
+### 1. Análisis Exploratorio de Datos (EDA)
+- Revisión de estructura y calidad del dataset
+- Análisis descriptivo de eficiencia de tiro por contexto
+- Visualizaciones comparativas entre:
+  - Regular Season vs Playoffs
+  - Clutch vs resto del partido
+  - Diferencias por período
+
+### 2. Feature Engineering
+- Selección de variables directamente relacionadas con la hipótesis
+- Codificación de variables categóricas mediante **One-Hot Encoding**
+- Escalado de variables numéricas cuando fue necesario
+
+### 3. Modelado
+Se aplicaron modelos supervisados con el objetivo de evaluar si los patrones observados en el EDA se sostienen de forma consistente:
+- Regresión Logística
+- Modelos de clasificación adicionales para comparación
+
+La evaluación se realizó utilizando:
+- Accuracy
+- Matriz de confusión
+- Análisis de errores
 
 ---
 
-## 5. 🔍 Análisis planeado
-- **Exploratorio:** distribución de aciertos por tipo de tiro y etapa.  
-- **Comparativo:** diferencia de medias y dispersión entre regular y playoffs.  
-- **Predictivo (futuro):** regresión logística en toma de decisiones y su efectividad para ver qué variables predicen la victoria o la ventaja en el 4º cuarto.  
+## Métrica clave
+Se trabaja conceptualmente con la idea de **Δ Eficiencia**, definida como la diferencia de eficiencia de tiro entre dos contextos:
+
+Δ Eficiencia = Eficiencia (Contexto A) − Eficiencia (Contexto B)
+
+Ejemplo:
+- T2% (Playoffs Clutch) − T2% (Regular Season No Clutch)
+
+Esta métrica permite evaluar la hipótesis de forma directa e interpretable.
 
 ---
 
-## 6. ⚠️ Limitaciones
-- Parte de los datos son simulaciones basadas en tendencias, no play-by-play reales.  
-- No se incluye aún la variable “situación del partido” (diferencia de puntos).  
-- Dataset reducido (850 filas).  
+## Resultados
+- Se observan diferencias claras de eficiencia según el contexto del partido
+- El contexto competitivo influye en la probabilidad de conversión
+- Los modelos confirman parcialmente los patrones detectados en el EDA
+- Se priorizó interpretabilidad por sobre complejidad del modelo
 
 ---
 
-## 7. 💡 Próximos pasos
-1. Ampliar con datos reales por posesión (NBA API).  
-2. Incorporar contexto de juego (ventaja/desventaja, momento del partido).  
-3. Visualizar eficiencia en los últimos 3 minutos de partidos cerrados.  
-4. Entrenar un modelo predictivo y validar su precisión.  
+## Limitaciones
+- El dataset no incluye play-by-play detallado
+- No se modelan secuencias de jugadas ni fatiga acumulada
+- El análisis se limita a variables contextuales agregadas
 
 ---
 
-## 📂 archivos
-- `base_nba.xlsx` → Dataset principal.  
-- `base_nba.csv` → Versión en formato CSV.  
-- `notebook_nba.ipynb` → Análisis y visualizaciones en Python.  
-- `README.md` → Descripción y documentación del proyecto.  
+## Posibles mejoras futuras
+- Incorporar métricas avanzadas de eficiencia contextual
+- Test de hipótesis formal sobre Δ Eficiencia
+- Inclusión de términos de interacción bien justificados
+- Uso de datos play-by-play para análisis más fino del contexto
 
 ---
 
+## Herramientas utilizadas
+- Python
+- Pandas
+- NumPy
+- Matplotlib / Seaborn
+- Scikit-learn
+- Google Colab
 
+---
+
+## Autor
+Proyecto desarrollado por **Ariel Teplitz** como parte de un trabajo académico en Ciencia de Datos de la UTN, con foco en análisis estadístico e interpretabilidad de resultados.
